@@ -1,0 +1,34 @@
+licenses(["notice"])  # BSD 3-Clause
+
+tests = [
+    "conftest",
+    "test_api",
+    # "test_async",
+    # "test_asyncfilters",
+    "test_bytecode_cache",
+    "test_core_tags",
+    "test_debug",
+    "test_ext",
+    "test_features",
+    "test_filters",
+    "test_idtracking",
+    "test_imports",
+    "test_inheritance",
+    "test_lexnparse",
+    "test_loader",
+    "test_nativetypes",
+    "test_regression",
+    # "test_security",
+    "test_tests",
+    "test_utils",
+]
+
+[py_test(
+    name = t,
+    srcs = [
+        "{}.py".format(t),
+    ],
+    deps = [
+        "//jinja2",
+    ],
+) for t in tests]
